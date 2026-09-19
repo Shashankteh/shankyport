@@ -22,7 +22,13 @@ export default function ContactForm() {
     setErrorMessage("");
 
     try {
-      const { error } = await supabase.from("inquiries").insert([formData]);
+      const { error } = await supabase.from("inquiries").insert([{
+        name: formData.name,
+        email: formData.email,
+        company_or_brand: formData.company_or_brand,
+        shoot_type: formData.shoot_type,
+        message: formData.message
+      }]);
       
       if (error) throw error;
       
