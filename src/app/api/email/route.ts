@@ -18,7 +18,7 @@ export async function POST(request: Request) {
 
     // We'll send it to a default email, or pull the email from process.env
     // Using a verified domain is required by Resend in production. For now we use the onboarding email
-    const notificationEmail = process.env.NOTIFICATION_EMAIL || 'delivered@resend.dev'; 
+    const notificationEmail = process.env.NOTIFICATION_EMAIL || 'kana8432474451@gmail.com'; 
 
     await resend.emails.send({
       from: 'Portfolio Inquiries <onboarding@resend.dev>',
